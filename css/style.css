@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+* {
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    scroll-behavior: smooth;
+}
+
+.card {
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.break {
+    color:red;
+    padding: 12px;
+}
+
+#logo {
+    margin: 12px;
+    border-radius:62px;
+}
+#footer {
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+
+#navbarSupportedContent {
+    position: sticky;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.card{
+    margin:12px;
+}
+#home{
+    background-color: rgb(235, 228, 228);
+}
+#nav{
+    position: sticky;
+}
+.card-img{
+    margin:6px;
+}

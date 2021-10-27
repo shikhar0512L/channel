@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHP Cheatsheet</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+
+  <script>
+    const target = () => {
+      console.log("target was clicked");
+    }
+
+  </script>
+
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+    * {
+      font-family: 'Ubuntu', cursive;
+    }
+
+    .coppy {
+      background-color: black;
+      padding: 12px;
+      color: white;
+      border-radius: 12px;
+      margin: 20px;
+    }
+
+    #cheat {
+      margin: 40px;
+    }
+
+    .navbar {
+      padding: 12px;
+    }
+  </style>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" onPress=target()>PHP</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <div id="cheat">
+    <h1>Php Cheatsheet</h1>
+    <hr>
+    <h2>Basics</h2>
+    <hr>
+    <h3>Hello World</h3>
+    <hr>
+    <p>echo function is used to display or print output</p>
+    <hr>
+    <p class="coppy"> echo "Hello World!";</p>
+    <hr>
+    <h2>Comments</h2>
+    <hr>
+    <p>Commets are used to make the code more understandable for programmer, they are not executed by compiler or
+      interpreter.</p>
+    <hr>
+    <h3>One Liner</h3>
+    <hr>
+    <p>This is a single line comment</p>
+    <hr>
+    <p class="coppy">// Twinkle Twinkle Little Star</p>
+    <hr>
+    <h3>Another One Liner</h3>
+    <hr>
+    <p>This is a single-line comment</p>
+    <hr>
+    <p class="coppy"># Chocolate dedo mujhe yaar</p>
+    <hr>
+    <h3>Multiline</h3>
+    <hr>
+    <p>This is a multiline comment</p>
+    <hr>
+    <p class="coppy">/* Code
+      <br>
+      With
+      <br>
+      Shikhar */
+    </p>
+    <hr>
+    <h3>Vardump</h3>
+    <hr>
+    <p>This function dumps information about one or more variables.</p>
+    html
+    <p class="coppy">var_dump(var1, var2, ...);</p>
+    <hr>
+    <h2>Variables</h2>
+    <hr>
+    <p>Variables are "containers" for storing information.</p>
+    <hr>
+    <h3>Defining Variables</h3>
+    <hr>
+    <p class="coppy">$Title = "PHP Cheat Sheet By CodeWithShikhar";</p>
+    <hr>
+    <h2>Datatypes</h2>
+    <hr>
+    <p>Datatype is a type of data</p>
+    <hr>
+    <h3>String</h3>
+    <hr>
+    <p>A string is a sequence of characters, like "Hello world!".</p>
+    <hr>
+    <p class="coppy">$x = "Shikhar";
+      <br>
+      echo $x;
+    </p>
+    <hr>
+    <h3>Integer</h3>
+    <hr>
+    <p>An integer is a number without any decimal part.</p>
+    <hr>
+    <p class="coppy">$x = 1234;
+      <br>
+      var_dump($x);
+    </p>
+    <hr>
+    <h3>Float</h3>
+    <hr>
+    <p>A float is a number with a decimal point or a number in exponential form.</p>
+    <hr>
+    <p class="coppy">$x = 1.2345;
+      <br>
+      var_dump($x);
+    </p>
+    <hr>
+    <h3>Array</h3>
+    <hr>
+    <p>An array stores multiple values in one single variable</p>
+    <hr>
+    <p class="coppy">$names = array("Shikhar","Rohan","Shubham");
+      <br>
+      var_dump($names);
+    </p>
+    <hr>
+    <h3>Class</h3>
+    <hr>
+    <p>A class is a template for objects</p>
+    <hr>
+    <p class="coppy">class Harry{
+      <br>
+      // code goes here...
+      <br>
+      }
+    </p>
+    <hr>
+    <h3>Object</h3>
+    <hr>
+    <p>An object is an instance of the class.</p>
+    <hr>
+    <p class="coppy">class Bike {
+      <br>
+      public $color;
+      <br>
+      public $model;
+      <br>
+      public function __construct($color, $model) {
+      <br>
+      $this->color = $color;
+      <br>
+      $this->model = $model;
+      <br>
+      }
+      <br>
+      public function message() {
+      <br>
+      return "My bike is a " . $this->color . " " . $this->model . "!";
+      <br>
+      }
+      <br>
+      }
+      <br>
+
+      $myBike = new Bike("red", "Honda");
+      <br>
+      echo $myBike -> message();
+    </p>
+    <hr>
+    <h2>Escape Characters</h2>
+    <hr>
+    <p>Escape sequences are used for escaping a character during string parsing. It is also used for giving special
+      meaning to represent line breaks, tabs, alerts and more.</p>
+    <hr>
+    <h3>Line feed</h3>
+    <hr>
+    <p>It adds a newline</p>
+    <hr>
+    <p class="coppy">\n</p>
+    <hr>
+    <h3>Carriage return</h3>
+    <hr>
+    <p>It inserts a carriage return in the text at this point.</p>
+    <hr>
+    <p class="coppy">/r</p>
+    <hr>
+    <h3>Horizontal tab</h3>
+    <hr>
+    <p>It gives a horizontal tab space</p>
+    <hr>
+    <p class="coppy">/t</p>
+    <hr>
+    <h3>Vertical tab</h3>
+    <hr>
+    <p>It gives a vertical tab space</p>
+    <hr>
+    <p class="coppy">/v</p>
+    <hr>
+    <h3>Escape</h3>
+    <hr>
+    <p>It is used for escape characters</p>
+    <hr>
+    <p class="coppy">/e</p>
+    <hr>
+    <h3>Form feed</h3>
+    <hr>
+    <p>It is commonly used as page separators but now is also used as section separators.</p>
+    <hr>
+    <p class="coopy">/f</p>
+    <hr>
+    <h3>Backslash</h3>
+    <hr>
+    <p>It adds a backslash</p>
+    <hr>
+    <p class="coppy">\\</p>
+    <hr>
+    <h3>Dollar sign</h3>
+    <hr>
+    <p>Print the next character as a dollar, not as part of a variable</p>
+    <hr>
+    <p class="coppy">/$</p>
+    <hr>
+    <h3>Single quote</h3>
+    <hr>
+    <p>Print the next character as a single quote, not a string closer</p>
+    <hr>
+    <p class="coppy">/'</p>
+    <hr>
+    <h3>Double quote</h3>
+    <hr>
+    <p>Print the next character as a double quote, not a string closer</p>
+    <hr>
+    <p class="coppy">/"</p>
+    <hr>
+    <h1>Operators</h1>
+    <hr>
+    <p>Operators are symbols that tell the compiler or interpreter to perform specific mathematical or logical
+      manipulations. These are of several types.</p>
+    <hr>
+    <h2>Arithmetic Operators</h2>
+    <hr>
+    <h3>Addition</h3>
+    <hr>
+    <p>Sum of $x and $y</p>
+    <hr>
+    <p class="coppy">$x + $y</p>
+    <hr>
+    <h3>Subtraction</h3>
+    <hr>
+    <p>Difference of $x and $y</p>
+    <hr>
+    <p class="coppy">$x - $y</p>
+    <hr>
+    <h3>Multiplication</h3>
+    <hr>
+    <p>Product of $x and $y</p>
+    <hr>
+    <p class="coppy">$x * $y</p>
+    <hr>
+    <h3>Division</h3>
+    <hr>
+    <p>Quotient of $x and $y</p>
+    <hr>
+    <p class="coppy">$x / $y</p>
+    <hr>
+    <h3>Modulus</h3>
+    <hr>
+    <p>The remainder of $x divided by $y</p>
+    <hr>
+    <p class="coppy">$x % $y</p>
+    <hr>
+    <h3>Exponentiation</h3>
+    <hr>
+    <p>Result of raising $x to the $y'th power</p>
+    <hr>
+    <p class="coppy">$x ** $y</p>
+    <hr>
+    <h2>PHP Assignment Operators</h2>
+    <hr>
+    <p>The PHP assignment operators are used with numeric values to write a value to a variable.</p>
+    <hr>
+    <p>The left operand gets set to the value of the expression on the right</p>
+    <hr>
+    <p class="coppy">x = y</p>
+    <hr>
+    <h5>Addition</h5>
+    <hr>
+    <p class="coppy">a = x + y</p>
+    <hr>
+    <h5>Subtraction</h5>
+    <hr>
+    <p class="coppy">x = x - y</p>
+    <hr>
+    <h5>Multiplication</h5>
+    <hr>
+    <p class="coppy">x = x * y</p>
+    <hr>
+    <h5>Division</h5>
+    <hr>
+    <p class="coppy">x = x / y</p>
+    <hr>
+    <h5>Modulus</h5>
+    <hr>
+    <p class="coppy">x = x % y</p>
+    <hr>
+    <h2>PHP Comparison Operators</h2>
+    <hr>
+    <h5>Equal</h5>
+    <hr>
+    <p>Returns true if $x is equal to $y</p>
+    <hr>
+    <p class="coppy">$x == $y</p>
+    <hr>
+    <h5>Identical</h5>
+    <hr>
+    <p>Returns true if $x is equal to $y, and they are of the same type</p>
+    <hr>
+    <p class="coppy">$x === $y</p>
+    <hr>
+    <h5>Not equal</h5>
+    <hr>
+    <p>Returns true if $x is not equal to $y</p>
+    <hr>
+    <p class="coppy">$x != $y</p>
+    <hr>
+    <h5>Not identical</h5>
+    <hr>
+    <p>Returns true if $x is not equal to $y, or they are not of the same type</p>
+    <hr>
+    <p class="coppy">$x !== $y</p>
+    <hr>
+    <h5>Greater than</h5>
+    <hr>
+    <p>Returns true if $x is greater than $y</p>
+    <hr>
+    <p class="coppy">$x > $y</p>
+    <hr>
+    <h5>Less than</h5>
+    <hr>
+    <p>Returns true if $x is less than $y</p>
+    <hr>
+    <p class="coppy">$x < $y</p>
+        <hr>
+        <h5>Greater than or equal to</h5>
+        <hr>
+        <p>Returns true if $x is greater than or equal to $y</p>
+        <hr>
+        <p class="coppy">$x >= $y</p>
+        <hr>
+        <h5>Less than or equal to</h5>
+        <hr>
+        <p>Returns true if $x is less than or equal to $y</p>
+        <hr>
+        <p class="coppy">$x <= $y</p>
+            <hr>
+            <h3>PHP Increment / Decrement Operators</h3>
+            <hr>
+            <h5>Pre-increment</h5>
+            <hr>
+            <p>Increments $x by one, then returns $x</p>
+            <hr>
+            <p class="coppy">=++$x</p>
+            <hr>
+            <h5>Post-increment</h5>
+            <hr>
+            <p>Returns $x, then increments $x by one</p>
+            <hr>
+            <p class="coppy">$x++</p>
+            <hr>
+            <h5>Pre-decrement</h5>
+            <hr>
+            <p>Decrements $x by one, then returns $x</p>
+            <hr>
+            <p class="coppy">--$x</p>
+            <hr>
+            <h5>Post-decrement</h5>
+            <hr>
+            <p>Returns $x, then decrements $x by one</p>
+            <hr>
+            <p class="coppy">$x--</p>
+            <hr>
+            <h2>PHP Logical Operators</h2>
+            <hr>
+            <h5>And</h5>
+            <hr>
+            <p>True if both $x and $y are true</p>
+            <hr>
+            <p class="coppy">$x and $y</p>
+            <hr>
+            <h5>Or</h5>
+            <hr>
+            <p>True if either $x or $y is true</p>
+            <hr>
+            <p class="coppy">$x or $y</p>
+            <hr>
+            <h5>Xor</h5>
+            <hr>
+            <p>True if either $x or $y is true, but not both</p>
+            <hr>
+            <p class="coppy">$x xor $y</p>
+            <hr>
+            <h5>And</h5>
+            <hr>
+            <p>True if both $x and $y are true</p>
+            <hr>
+            <p class="coppy">$x && $y</p>
+            <hr>
+            <h5>Or</h5>
+            <hr>
+            <p>True if either $x or $y is true</p>
+            <hr>
+            <p class="coppy">$x || $y</p>
+            <hr>
+            <h5>Not</h5>
+            <hr>
+            <p>True if $x is not true</p>
+            <hr>
+            <p class="coppy">!$x</p>
+            <hr>
+            <h2>PHP Conditional Assignment Operators</h2>
+            <hr>
+            <h5>Ternary</h5>
+            <hr>
+            <p>Returns the value of $x. The value of $x is expr2 if expr1 = TRUE. The value of $x is expr3 if expr1 =
+              FALSE</p>
+            <hr>
+            <p class="coppy">$x = expr1 ? expr2 : expr3</p>
+            <hr>
+            <h2>Conditional Statements</h2>
+            <hr>
+            <p>Conditional statements are used to perform operations based on some condition.</p>
+            <hr>
+            <h5>If Statement</h5>
+            <hr>
+            <p>if statement checks the condition and if it is True, then the block of if statement executes; otherwise,
+              control skips that block of code.</p>
+            <hr>
+            <p class="coppy">if (condition) {
+              <br>
+              // code to execute if condition is met
+              <br>
+              }
+            </p>
+            <hr>
+            <h5>If..Else</h5>
+            <hr>
+            <p>if the condition of if block evaluates to True, then if block executes otherwise else block executes</p>
+            <hr>
+            <p class="coppy">if (condition) {
+              <br>
+              // code to execute if condition is met
+              <br>
+              } else {
+              <br>
+              // code to execute if condition is not met
+              <br>
+              }
+            </p>
+            <hr>
+            <h5>If..Elseif..Else</h5>
+            <hr>
+            <p>It executes different codes for more than two conditions</p>
+            <hr>
+            <p class="coppy">if (condition) {
+              <br>
+              // code to execute if condition is met
+              <br>
+              } elseif (condition) {
+              <br>
+              // code to execute if this condition is met
+              <br>
+              } else {
+              <br>
+              // code to execute if none of the conditions are met
+              <br>
+              }
+            </p>
+            <hr>
+            <h5>Switch Statement</h5>
+            <hr>
+            <p>It allows a variable to be tested for equality against a list of values (cases).</p>
+            <hr>
+            <p class="coppy">switch (n) {
+              <br>
+              case x:
+              <br>
+              code to execute if n=x;
+              <br>
+              break;
+              <br>
+              case y:
+              <br>
+              code to execute if n=y;
+              <br>
+              break;
+              <br>
+              case z:
+              <br>
+              code to execute if n=z;
+              <br>
+              break;
+              <br>
+              // add more cases as needed
+              <br>
+              default:
+              <br>
+              code to execute if n is neither of the above;
+              <br>
+              }
+            </p>
+            <hr>
+            <h2>Loops</h2>
+            <hr>
+            <p>Iterative statements or Loops facilitate programmers to execute any block of code lines repeatedly.</p>
+            <hr>
+            <h5>For Loop</h5>
+            <hr>
+            <p>It is used to iterate the statements several times. It is frequently used to traverse the data structures
+              like the array and linked list.</p>
+            <hr>
+            <p class="coppy">for (starting counter value; ending counter value; increment by which to increase) {
+              <br>
+              // code to execute goes here
+              <br>
+              }
+            </p>
+            <hr>
+            <h5>Foreach Loop</h5>
+            <hr>
+            <p>The foreach loop loops through a block of code for each element in an array.</p>
+            <hr>
+            <p class="coppy">foreach ($InsertYourArrayName as $value) {
+              <br>
+              // code to execute goes here
+              <br>
+              }
+            </p>
+            <hr>
+            <h5>While Loop</h5>
+            <hr>
+            <p>It iterate the block of code as long as a specified condition is True or vice versa</p>
+            <hr>
+            <p class="coppy">while (condition that must apply) {
+              <br>
+              // code to execute goes here
+              <br>
+              }
+            </p>
+            <hr>
+            <h5>Do-While Loop</h5>
+            <hr>
+            <p>This loop is very similar to the while loop with one difference, i.e., the body of the do-while loop is
+              executed at least once even if the condition is False. It is an exit-controlled loop.</p>
+            <hr>
+            <p class="coppy">do {
+              <br>
+              // code to execute goes here;
+              <br>
+              }
+              <br>
+              while (condition that must apply);
+            </p>
+            <hr>
+            <h2>Predefined Variables</h2>
+            <hr>
+            <p>PHP provides a large number of predefined variables to all scripts. The variables represent everything
+              from external variables to built-in environment variables, last error messages etc. All this information
+              is defined in some predefined variables.</p>
+            <hr>
+            <h5>$GLOBALS</h5>
+            <hr>
+            <p>$GLOBALS is a PHP super global variable which is used to access global variables from anywhere in the PHP
+              script.</p>
+            <hr>
+            <p class="coppy">
+              <br>
+              $a = 10;
+              <br>
+              $b = 15;
+              <br>
+
+              function addition() {
+              <br>
+              $GLOBALS['c'] = $GLOBALS['a'] + $GLOBALS['b'];
+              <br>
+              }
+              <br>
+              addition();
+              <br>
+              echo $c;
+              <br>
+            </p>
+            <hr>
+            <h2>$_SERVER</h2>
+            <hr>
+            <p>Returns the filename of the currently executing script. $_SERVER is a PHP super global variable which
+              holds information about headers, paths, and script locations.</p>
+            <hr>
+            <p class="coppy">$_SERVER['PHP_SELF']</p>
+            <hr>
+            <p>Returns the version of the Common Gateway Interface (CGI) the server is using</p>
+            <hr>
+            <p class="coppy">$_SERVER['GATEWAY_INTERFACE']</p>
+            <hr>
+            <p>Returns the IP address of the host server</p>
+            <hr>
+            <p class="coppy">$_SERVER['SERVER_ADDR']</p>
+            <hr>
+            <p>Returns the name of the host server</p>
+            <hr>
+            <p class="coppy">$_SERVER['SERVER_NAME']</p>
+            <hr>
+            <p>Returns the server identification string (such as Apache/2.2.24)</p>
+            <hr>
+            <p class="coppy">$_SERVER['SERVER_SOFTWARE']</p>
+            <hr>
+            <p>Returns the name and revision of the information protocol (such as HTTP/1.1)</p>
+            <hr>
+            <p class="coppy">$_SERVER['SERVER_PROTOCOL']</p>
+            <hr>
+            <p>Returns the request method used to access the page (such as POST)</p>
+            <hr>
+            <p class="coppy">$_SERVER['REQUEST_METHOD']</p>
+            <hr>
+            <p>Returns the timestamp of the start of the request (such as 1377687496)</p>
+            <hr>
+            <p class="coppy">$_SERVER['REQUEST_TIME']</p>
+            <hr>
+            <p>Returns the query string if the page is accessed via a query string</p>
+            <hr>
+            <p class="coppy">$_SERVER['QUERY_STRING']</p>
+            <hr>
+            <p>Returns the Accept header from the current request</p>
+            <hr>
+            <p class="coppy">$_SERVER['HTTP_ACCEPT']</p>
+            <hr>
+            <p>Returns the Accept_Charset header from the current request (such as utf-8,ISO-8859-1)</p>
+            <hr>
+            <p class="coppy">$_SERVER['HTTP_ACCEPT_CHARSET']</p>
+            <hr>
+            <p>Returns the Host header from the current request</p>
+            <hr>
+            <p class="coppy">$_SERVER['HTTP_HOST']</p>
+            <hr>
+            <p>Returns the complete URL of the current page (not reliable because not all user-agents support it)</p>
+            <hr>
+            <p class="coppy">$_SERVER['HTTP_REFERER']</p>
+            <hr>
+            <p>Is the script queried through a secure HTTP protocol?</p>
+            <hr>
+            <p class="coppy">$_SERVER['HTTPS']</p>
+            <hr>
+            <p>Returns the IP address from where the user is viewing the current page</p>
+            <hr>
+            <p class="coppy">$_SERVER['REMOTE_ADDR']</p>
+            <hr>
+            <p>Returns the Hostname from where the user is viewing the current page</p>
+            <hr>
+            <p class="coppy">$_SERVER['REMOTE_HOST']</p>
+            <hr>
+            <p>Returns the port being used on the user's machine to communicate with the web server</p>
+            <hr>
+            <p class="coppy">$_SERVER['REMOTE_PORT']</p>
+            <hr>
+            <p>Returns the absolute pathname of the currently executing script</p>
+            <hr>
+            <p class="coppy">$_SERVER['SCRIPT_FILENAME']</p>
+            <hr>
+            <p>Returns the value given to the SERVER_ADMIN directive in the web server configuration file (if your
+              script runs on a virtual host, it will be the value defined for that virtual host)</p>
+            <hr>
+            <p class="coppy">$_SERVER['SERVER_ADMIN']</p>
+            <hr>
+            <p>Returns the port on the server machine being used by the webserver for communication (such as 80)</p>
+            <hr>
+            <p class="coppy">$_SERVER['SERVER_PORT']</p>
+            <hr>
+            <p>Returns the server version and virtual hostname which are added to server-generated pages</p>
+            <hr>
+            <p class="coppy">$_SERVER['SERVER_SIGNATURE']</p>
+            <hr>
+            <p>Returns the file system based path to the current script</p>
+            <hr>
+            <p class="coppy">$_SERVER['PATH_TRANSLATED']</p>
+            <hr>
+            <p>Returns the path of the current script</p>
+            <hr>
+            <p class="coppy">$_SERVER['SCRIPT_NAME']</p>
+            <hr>
+            <p>Returns the URI of the current page</p>
+            <hr>
+            <p class="coppy">$_SERVER['SCRIPT_URI']</p>
+            <hr>
+            <h2>$_GET</h2>
+            <hr>
+            <p>PHP $_GET is a PHP super global variable which is used to collect form data after submitting an HTML form
+              with method="get".</p>
+            <hr>
+            <p class="coppy">echo "Hello" . $_GET['Example'] . " at " . $_GET['web']; </p>
+            <hr>
+            <h2>$_POST</h2>
+            <hr>
+            <p>PHP $_POST is a PHP super global variable which is used to collect form data after submitting an HTML
+              form with method="post". $_POST is also widely used to pass variables.</p>
+            <hr>
+            <p class="coppy">if ($_SERVER["REQUEST_METHOD"] == "POST") {
+              <br>
+              $name = $_POST['fname'];
+              <br>
+              if (empty($name)) {
+              <br>
+              echo "Please Enter your name";
+              <br>
+              } else {
+              <br>
+              echo $name;
+              <br>
+              }
+              <br>
+              }
+            </p>
+            <hr>
+            <h2>$_REQUEST</h2>
+            <hr>
+            <p>PHP $_REQUEST is a PHP super global variable which is used to collect data after submitting an HTML form.
+            </p>
+            <hr>
+            <p class="coppy">if ($_SERVER["REQUEST_METHOD"] == "POST") {
+              <br>
+              $name = $_REQUEST['fname'];
+              <br>
+              if (empty($name)) {
+              <br>
+              echo "Name is empty";
+              <br>
+              } else {
+              <br>
+              echo $name;
+              <br>
+              }
+              <br>
+              }
+            </p>
+            <hr>
+            <h3>Variable-handling Functions</h3>
+            <hr>
+            <p>The PHP variable handling functions are part of the PHP core. No installation is required to use these
+              functions.</p>
+            <hr>
+            <h5>boolval</h5>
+            <hr>
+            <p>Boolval is used to get the boolean value of a variable</p>
+            <hr>
+            <p class="coppy">echo '0: '.(boolval(0) ? 'true' : 'false')."\n";
+              <br>
+              echo '42: '.(boolval(42) ? 'true' : 'false')."\n";
+              <br>
+              echo '0.0: '.(boolval(0.0) ? 'true' : 'false')."\n";
+              <br>
+              echo '4.2: '.(boolval(4.2) ? 'true' : 'false')."\n";
+              <br>
+              echo '"": '.(boolval("") ? 'true' : 'false')."\n";
+              <br>
+              echo '"string": '.(boolval("string") ? 'true' : 'false')."\n";
+              <br>
+              echo '"0": '.(boolval("0") ? 'true' : 'false')."\n";
+              <br>
+              echo '"1": '.(boolval("1") ? 'true' : 'false')."\n";
+              <br>
+              echo '[1, 2]: '.(boolval([1, 2]) ? 'true' : 'false')."\n";
+              <br>
+              echo '[]: '.(boolval([]) ? 'true' : 'false')."\n";
+              <br>
+              echo 'stdClass: '.(boolval(new stdClass) ? 'true' : 'false')."\n";
+            </p>
+            <hr>
+            <h5>isset
+            </h5>
+            <hr>
+            <p>It is used to check whether a variable is empty. It also checks whether the variable is set/declared:</p>
+            <hr>
+            <p class="coppy">$x = 0;
+              <br>
+              // True because $x is set
+              <br>
+              if (isset($x)) {
+              <br>
+              echo "Variable 'x' is set";
+              <br>
+              }
+            </p>
+            <hr>
+            <h5>unset</h5>
+            <hr>
+            <p>It unsets variables.</p>
+            <hr>
+            <p class="coppy">$a = "Namaste world!"; <br>
+              echo "The value of 'a' before unset: " . $a ; <br>
+              unset($a); <br>
+              echo "The value of 'a' after unset: " . $a; </p>
+            <hr>
+            <h5>debug_zval_dump</h5>
+            <hr>
+            <p>debug_zval_dump is used to dump a string representation of an internal zval structure to output</p>
+            <hr>
+            <p class="coppy">$var1 = 'Hello'; <br>
+              $var1 .= ' World'; <br>
+              $var2 = $var1; <br>
+              <br>
+              debug_zval_dump($var1);
+            </p>
+            <hr>
+            <h5>empty</h5>
+            <hr>
+            <p>Empty is used to check whether a variable is empty or not.</p>
+            <hr>
+            <p class="coppy">$var = 0; <br>
+              <br>
+              // Evaluates to true because $var is empty <br>
+              if (empty($var)) { <br>
+              echo '$var is either 0, empty, or not set at all'; <br>
+              } <br>
+              <br>
+              // Evaluates as true because $var is set <br>
+              if (isset($var)) { <br>
+              echo '$var is set even though it is empty'; <br>
+              }
+            </p>
+            <hr>
+            <h5>floatval</h5>
+            <hr>
+            <p>It returns the float value of different variables:</p>
+            <hr>
+            <p class="coppy">$var = '122.34343The'; <br>
+              $float_value_of_var = floatval($var); <br>
+              echo $float_value_of_var; <br> // 122.34343 </p>
+            <hr>
+            <h5>get_defined_vars</h5>
+            <hr>
+            <p>It returns all defined variables, as an array:</p>
+            <hr>
+            <p class="coppy">$b = array(1, 1, 2, 3, 5, 8); <br>
+              <br>
+              $arr = get_defined_vars(); <br>
+              <br>
+              // print $b <br>
+              print_r($arr["b"]); <br>
+              <br>
+              /* print path to the PHP interpreter (if used as a CGI) <br>
+              * e.g. /usr/local/bin/php */ <br>
+              echo $arr["_"]; <br>
+              <br>
+              // print the command-line parameters if any <br>
+              print_r($arr["argv"]); <br>
+              <br>
+              // print all the server vars <br>
+              print_r($arr["_SERVER"]); <br>
+              <br>
+              // print all the available keys for the arrays of variables <br>
+              print_r(array_keys(get_defined_vars()));
+            </p>
+            <hr>
+            <h5>get_resource_type</h5>
+            <hr>
+            <p>It returns the resource type:</p>
+            <hr>
+            <p class="coppy">// prints: stream <br>
+              $fp = fopen("foo", "w"); <br>
+              echo get_resource_type($fp) . "\n"; <br>
+              <br>
+              // prints: curl <br>
+              $c = curl_init (); <br>
+              echo get_resource_type($c) . "\n"; // works prior to PHP 8.0.0 as since 8.0 curl_init returns a CurlHandle
+              object
+            </p>
+            <hr>
+            <h5>gettype</h5>
+            <hr>
+            <p>It returns the type of different variables:</p>
+            <hr>
+            <p class="coppy">$a = 3; <br>
+              echo gettype($a) ; </p>
+            <hr>
+            <h5>intval</h5>
+            <hr>
+            <p>It returns the integer value of different variables:</p>
+            <hr>
+            <p class="coppy">echo intval(42);</p>
+            <hr>
+            <h5>is_array</h5>
+            <hr>
+            <p>To check whether a variable is an array or not:</p>
+            <hr>
+            <p class="coppy">$a = "Hello"; <br>
+              echo "a is " . is_array($a) ;</p>
+            <hr>
+            <h2>Array</h2>
+            <hr>
+            <p>An array stores multiple values in one single variable.</p>
+            <hr>
+            <h5>Declaring an Array</h5>
+            <hr>
+            <p class="coppy">$cms = array("Shikhar", "Lovish", "Rohan"); <br>
+              echo "Who needs chocolate? Is it" . $cms[0] . ", " . <br>
+              $cms[1] . " or " . $cms[2] . "?";</p>
+            <hr>
+            <h2>Functions</h2>
+            <hr>
+            <p>A function is a block of statements that can be used repeatedly in a program</p>
+            <hr>
+            <h5>Defining Functions</h5>
+            <hr>
+            <p class="coppy">function NameOfTheFunction() { <br>
+              //place PHP code here <br>
+              }</p>
+            <hr>
+            <h2>MySQLi Functions</h2>
+            <hr>
+            <p>These functions allow you to access MySQL database server.</p>
+            <hr>
+            <h5>mysqli_connect() Function</h5>
+            <hr>
+            <p>It opens a non-persistent MySQL connection</p>
+            <hr>
+            <p class="coppy">mysqli_connect()</p>
+            <hr>
+            <h5>mysqli_affected_rows() Function</h5>
+            <hr>
+            <p>It returns the number of affected rows</p>
+            <hr>
+            <p class="coppy">mysqli_affected_rows()</p>
+            <hr>
+            <h5>mysqli_connect_error() Function</h5>
+            <hr>
+            <p>It shows the Error description for the connection error</p>
+            <hr>
+            <p class="coppy">mysqli_connect_error()</p>
+            <hr>
+            <h5>mysqli_fetch_all() Function
+            </h5>
+            <hr>
+            <p>It fetches all result rows as an array</p>
+            <hr>
+            <p class="coppy">mysqli_fetch_all()
+            </p>
+            <hr>
+            <h5>mysqli_fetch_array() Function
+            </h5>
+            <hr>
+            <p>It fetches a result row as an associative, a numeric array, or both
+
+            </p>
+            <hr>
+            <p class="coppy">mysqli_fetch_array()
+            </p>
+            <hr>
+            <h5>mysqli_fetch_assoc() Function
+            </h5>
+            <hr>
+            <p>It fetches a result row as an associative array
+
+            </p>
+            <hr>
+            <p class="coppy">mysqli_fetch_assoc()
+            </p>
+            <hr>
+            <h5>mysqli_fetch_row() Function
+            </h5>
+            <hr>
+            <p>It fetches one row from a result set and returns it as an enumerated array
+
+            </p>
+            <hr>
+            <p class="coppy">mysqli_fetch_row()
+            </p>
+            <hr>
+            <h5>mysqli_kill() Function
+            </h5>
+            <hr>
+            <p>It kills a MySQL thread
+
+            </p>
+            <hr>
+            <p class="coppy">mysqli_kill()
+            </p>
+            <hr>
+            <h5>mysqli_close() Function
+            </h5>
+            <hr>
+            <p>It closes a database connection
+
+            </p>
+            <hr>
+            <p class="coppy">mysqli_close()
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+</body>
+
+</html>

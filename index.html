@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to code with shikhar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="app.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+    <!-- BOOTSTRAP ALERT -->
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert" style="display:none">
+      <strong>Coming Soon!</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <!-- ALERT ENDS -->
+
+
+
+
+
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" id="nav">Code-With-Shikhar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sign/sign.html">Login/signup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="article/article.html">Articles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="RouteToCheatSheet.html">Cheat Sheets of programming languages.</a>
+          </li>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <a href="#" class="btn btn-danger" style="text-decoration: none;" onclick="hideFunction()">Search</a>
+          </form>
+
+      </div>
+    </div>
+  </nav>
+
+  <section id="home">
+    <div id="top">
+      <img src="images/icon.jpg" alt="logo" id='logo'>
+      <h1 id="reverse">Welcome to the website of CodeWithShikhar</h1>
+      <p>We are in a mission to help that people who want to learn coding but cannot afford to buy a course. And to make
+        it easy to all of our CWS family to understand programming Only you need is a laptop/desktop and a good
+        internet
+        connection.
+      </p>
+      <a href="https://www.youtube.com/channel/UCUAF4OuZMv39rP-xM2amj0Q" class="btn btn-danger" target="_blank">Our
+        channel</a>
+    </div>
+
+
+
+    <hr class="break">
+
+
+
+    <h1>OUR SERVICES</h1>
+    <div class="row">
+      <div class="card" style="width: 18rem;">
+        <img src="images/BG.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Coding articles</h5>
+          <p class="card-text">Some of the latest coding information compiled in the form of coding articles. Keep your
+            programming knowledge up to date with these articles!</p>
+          <a href="article/article.html" class="btn btn-danger" >Read it</a>
+        </div>
+      </div>
+      <div class="card my-2 p-2" style="width: 18rem;">
+        <img src="images/pair.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Pair programming </h5>
+          <p class="card-text">We are introducing A new feature known as pair programing in which you can do programming
+            with shikhar/code with shikhar for free.. Just mail me with "#pair" .</p>
+          <a href="mailto:raginisingh92095@gmail.com" class="btn btn-danger">Let's go</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://www.goodcore.co.uk/blog/wp-content/uploads/2019/08/coding-vs-programming-2.jpg"
+          class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">CheatSheets</h5>
+          <p class="card-text">CheatSheets are here!.</p>
+          <a href="RouteToCheatSheet.html" class="btn btn-danger">Let's go!</a>
+        </div>
+      </div>
+
+    </div> <!-- end .row -->
+    <hr>
+
+
+  </section>
+  <!-- FOOTER -->
+  <footer>
+    <div id="footer">
+      Copyright &copy; CodeWithShikhar. All rights reserved.
+
+    </div>
+
+  </footer>
+  <!-- STARTING OF TAWK.TO SCRIPT -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {},
+      Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"),
+        s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/60a25e61185beb22b30df277/1f5t41c7h';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+</body>
+
+
+</html>
