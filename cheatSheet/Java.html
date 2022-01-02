@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java CheatSheet </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="../icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+    <link rel="manifest" href="../icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+        * {
+            font-family: 'Bebas Neue', cursive;
+        }
+
+        .coppy {
+            background-color: black;
+            padding: 12px;
+            color: white;
+            border-radius: 12px;
+            margin: 20px;
+        }
+
+        #cheat {
+            margin: 40px;
+        }
+
+        .navbar {
+            padding: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+
+    <!-- Navbar starts -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://codingwithshikhar.web.app/">Go back</a>
+                    </li>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-danger" type="submit">Search</button>
+                    </form>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar ends -->
+
+    <!-- Main content starts-->
+    <div id="cheat">
+        <h1>Java Cheatsheet</h1>
+        <hr>
+        <h2>Basics</h2>
+        <hr>
+        <p>Basic syntax and functions from the Java programming language.</p>
+        <hr>
+        <p class="coppy">class HelloWorld{
+            <br>
+            public static void main(String args[]){
+            <br>
+            System.out.println("Hello World");
+            <br>
+            }
+            <br>
+            }
+        </p>
+        <hr>
+        <h2>Showing Output</h2>
+        <hr>
+        <p>It will print something to the output console.</p>
+        <hr>
+        <p class="coppy">System.out.println([text])</p>
+        <hr>
+        <h2>Taking Input</h2>
+        <hr>
+        <p>It will take string input from the user</p>
+        <hr>
+        <p class="coppy">import java.util.Scanner; //import scanner class
+            <br>
+            // create an object of Scanner class
+            <br>
+            Scanner input = new Scanner(System.in);
+            <br>
+
+            // take input from the user
+            <br>
+            String varName = input.nextLine();
+        </p>
+        <hr>
+        <h2>Primitive Type Variables</h2>
+        <hr>
+        <p>The eight primitives defined in Java are int, byte, short, long, float, double, boolean, and char those
+            aren't considered objects and represent raw values.</p>
+        <hr>
+        <h2>byte</h2>
+        <hr>
+        <p>byte is a primitive data type it only takes up 8 bits of memory.</p>
+        <hr>
+        <p class="coppy">age = 15;</p>
+        <hr>
+        <h2>long</h2>
+        <hr>
+        <p>long is another primitive data type related to integers. long takes up 64 bits of memory.</p>
+        <hr>
+        <p class="coppy">viewsCount = 3_123_456L;</p>
+        <hr>
+        <h2>float</h2>
+        <hr>
+        <p>We represent basic fractional numbers in Java using the float type. This is a single-precision decimal
+            number. Which means if we get past six decimal points, this number becomes less precise and more of an
+            estimate.</p>
+        <hr>
+        <p class="coppy">price = 100INR;</p>
+        <hr>
+        <h2>char</h2>
+        <hr>
+        <p>Char is a 16-bit integer representing a Unicode-encoded character.</p>
+        <hr>
+        <p class="coppy">letter = 'A';</p>
+        <hr>
+        <h2>boolean</h2>
+        <hr>
+        <p>The simplest primitive data type is boolean. It can contain only two values: true or false. It stores its
+            value in a single bit.</p>
+        <hr>
+        <p class="coppy">isEligible = true;</p>
+        <hr>
+        <h2>int</h2>
+        <hr>
+        <p>int holds a wide range of non-fractional number values.</p>
+        <hr>
+        <p class="coppy">var1 = 256;</p>
+        <hr>
+        <h2>short</h2>
+        <hr>
+        <p>If we want to save memory and byte is too small, we can use short.</p>
+        <hr>
+        <p class="coppy">short var2 = 786;</p>
+        <hr>
+        <h2>Comments</h2>
+        <hr>
+        <p>A comment is the code that is not executed by the compiler, and the programmer uses it to keep track of the
+            code.</p>
+        <hr>
+        <h3>Single line comment</h3>
+        <hr>
+        <p class="coppy">// It's a single line comment</p>
+        <hr>
+        <h3>Multi line comment</h3>
+        <hr>
+        <p class="coppy">/* It's a
+            <br>
+            multi-line
+            <br>
+            comment
+            <br>
+            */
+        </p>
+        <hr>
+        <h2>Constants</h2>
+        <hr>
+        <p>Constants are like a variable, except that their value never changes during program execution.</p>
+        <hr>
+        <p class="coppy">final float INTEREST_RATE = 0.04;</p>
+        <hr>
+        <h2>Arithmetic Expressions</h2>
+        <hr>
+        <p>These are the collection of literals and arithmetic operators.</p>
+        <hr>
+        <h3>Addition</h3>
+        <hr>
+        <p>It can be used to add two numbers</p>
+        <hr>
+        <p class="coppy">int x = 10 + 3;</p>
+        <hr>
+        <h3>Subtraction</h3>
+        <hr>
+        <p>It can be used to subtract two numbers</p>
+        <hr>
+        <p class="coppy">int x = 10 - 3;</p>
+        <hr>
+        <h3>Multiplication</h3>
+        <hr>
+        <p>It can be used to multiply add two numbers</p>
+        <hr>
+        <p class="coppy">int x = 10 * 3;</p>
+        <hr>
+        <h3>Division</h3>
+        <hr>
+        <p>It can be used to divide two numbers</p>
+        <hr>
+        <p class="coppy">int x = 10 / 3;
+            <br>
+            float x = (float)10 / (float)3;</p>
+
+
+
+
+
+
+
+
+
+    </div>
+
+</body>
+
+</html>

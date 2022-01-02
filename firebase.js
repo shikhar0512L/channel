@@ -1,38 +1,5 @@
-/**
- * @license
- * Copyright 2017 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-/**
- * @license
- * Copyright 2017 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
- class Deferred {
-    constructor() {
+class Deferred {
+        constructor() {
         this.reject = () => { };
         this.resolve = () => { };
         this.promise = new Promise((resolve, reject) => {
@@ -40,11 +7,6 @@
             this.reject = reject;
         });
     }
-    /**
-     * Our API internals are not promiseified and cannot because our callback APIs have subtle expectations around
-     * invoking promises inline, which Promises are forbidden to do. This method accepts an optional node-style callback
-     * and returns a node-style callback which will resolve or reject the Deferred's promise.
-     */
     wrapCallback(callback) {
         return (error, value) => {
             if (error) {
@@ -54,11 +16,8 @@
                 this.resolve(value);
             }
             if (typeof callback === 'function') {
-                // Attaching noop handler just in case developer wasn't expecting
-                // promises
+
                 this.promise.catch(() => { });
-                // Some of our callbacks don't expect a value and our own tests
-                // assert that the parameter length is 1
                 if (callback.length === 1) {
                     callback(error);
                 }
@@ -70,76 +29,14 @@
     }
 }
 
-/**
- * @license
- * Copyright 2017 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/**
- * @fileoverview Standardized Firebase Error.
- *
- * Usage:
- *
- *   // Typescript string literals for type-safe codes
- *   type Err =
- *     'unknown' |
- *     'object-not-found'
- *     ;
- *
- *   // Closure enum for type-safe error codes
- *   // at-enum {string}
- *   var Err = {
- *     UNKNOWN: 'unknown',
- *     OBJECT_NOT_FOUND: 'object-not-found',
- *   }
- *
- *   let errors: Map<Err, string> = {
- *     'generic-error': "Unknown error",
- *     'file-not-found': "Could not find file: {$file}",
- *   };
- *
- *   // Type-safe function - must pass a valid error code as param.
- *   let error = new ErrorFactory<Err>('service', 'Service', errors);
- *
- *   ...
- *   throw error.create(Err.GENERIC);
- *   ...
- *   throw error.create(Err.FILE_NOT_FOUND, {'file': fileName});
- *   ...
- *   // Service: Could not file file: foo.txt (service/file-not-found).
- *
- *   catch (e) {
- *     assert(e.message === "Could not find file: foo.txt.");
- *     if (e.code === 'service/file-not-found') {
- *       console.log("Could not read file: " + e['file']);
- *     }
- *   }
- */
 const ERROR_NAME = 'FirebaseError';
-// Based on code from:
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error#Custom_Error_Types
 class FirebaseError extends Error {
     constructor(code, message, customData) {
         super(message);
         this.code = code;
         this.customData = customData;
         this.name = ERROR_NAME;
-        // Fix For ES5
-        // https://github.com/Microsoft/TypeScript-wiki/blob/master/Breaking-Changes.md#extending-built-ins-like-error-array-and-map-may-no-longer-work
         Object.setPrototypeOf(this, FirebaseError.prototype);
-        // Maintains proper stack trace for where our error was thrown.
-        // Only available on V8.
         if (Error.captureStackTrace) {
             Error.captureStackTrace(this, ErrorFactory.prototype.create);
         }
@@ -244,44 +141,7 @@ class Component {
     }
 }
 
-/**
- * @license
- * Copyright 2019 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 const DEFAULT_ENTRY_NAME$1 = '[DEFAULT]';
-
-/**
- * @license
- * Copyright 2019 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/**
- * Provider for instance for service name T, e.g. 'auth', 'auth-internal'
- * NameServiceMapping[T] is an alias for the type of the instance
- */
 class Provider {
     constructor(name, container) {
         this.name = name;
@@ -1280,6 +1140,7 @@ function getApp(name = DEFAULT_ENTRY_NAME) {
     const app = _apps.get(name);
     if (!app) {
         throw ERROR_FACTORY.create("no-app" /* NO_APP */, { appName: name });
+      //  route(name).DEFAULT_ENTRY_NAME=""
     }
     return app;
 }
@@ -1379,22 +1240,6 @@ function setLogLevel(logLevel) {
     setLogLevel$1(logLevel);
 }
 
-/**
- * @license
- * Copyright 2019 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 function registerCoreComponents(variant) {
     _registerComponent(new Component('platform-logger', container => new PlatformLoggerServiceImpl(container), "PRIVATE" /* PRIVATE */));
     // Register `app` package.
@@ -1416,22 +1261,6 @@ registerCoreComponents('');
 var name = "firebase";
 var version = "9.6.1";
 
-/**
- * @license
- * Copyright 2020 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 registerVersion(name, version, 'cdn');
 
 export { FirebaseError, SDK_VERSION, DEFAULT_ENTRY_NAME as _DEFAULT_ENTRY_NAME, _addComponent, _addOrOverwriteComponent, _apps, _clearComponents, _components, _getProvider, _registerComponent, _removeServiceInstance, deleteApp, getApp, getApps, initializeApp, onLog, registerVersion, setLogLevel };
