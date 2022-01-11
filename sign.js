@@ -1,6 +1,6 @@
 console.log("Hello world");
 // ANSH'S PROGRAM
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyAOTjVtsg6_Cg449xlLbqx7XMsf08LBANw",
     authDomain: "codingwithshikhar.firebaseapp.com",
     projectId: "codingwithshikhar",
